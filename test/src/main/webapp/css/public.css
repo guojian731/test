@@ -1,0 +1,60 @@
+/*公共基础begin*/
+* {
+	margin:0 auto;
+	padding:0;
+}
+body {
+	min-width:1000px;
+	padding:0;
+	margin:0;
+}
+body .view_body {
+	min-width:1000px;
+	padding:0;
+	margin:0;
+}
+div,table,td,li,input,textarea,select,dd {
+	font-size:12px;
+	font-family: "Microsoft Yahei",sans-serif !important; resize:none;
+}
+img {
+	border:0px;
+}
+ul,li {
+	list-style: none;
+}
+input {
+	padding-left:2px;
+}
+select{
+	padding-left:2px; line-height: 22px; height: 22px; border: 1px solid #197fed;
+}
+/*清除浮动*/
+.clear {
+	clear:both;
+	font-size:1px;
+	line-height:1px;
+}
+a {
+	outline: none;
+	text-decoration:none;
+}
+a:active {
+	star:expression(this.onFocus=this.blur());
+}
+:focus {
+	outline:0;
+}
+
+/*布局类*/
+.L {
+	float:left;
+}
+.R {
+	float:right;
+}
+.red{ color:#fc1c50}
+
+.bc{
+	background: #9db5db;
+}

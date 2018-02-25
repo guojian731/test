@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.TUserMapper" >
+  <resultMap id="BaseResultMap" type="com.model.TUser" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="age" property="age" jdbcType="VARCHAR" />
+    <result column="biyetime" property="biyetime" jdbcType="TIMESTAMP" />
+    <result column="dept" property="dept" jdbcType="VARCHAR" />
+    <result column="emerName" property="emername" jdbcType="VARCHAR" />
+    <result column="emerPhone" property="emerphone" jdbcType="VARCHAR" />
+    <result column="empDesc" property="empdesc" jdbcType="VARCHAR" />
+    <result column="empNo" property="empno" jdbcType="VARCHAR" />
+    <result column="huji" property="huji" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="isDel" property="isdel" jdbcType="INTEGER" />
+    <result column="juzhudi" property="juzhudi" jdbcType="VARCHAR" />
+    <result column="manager" property="manager" jdbcType="VARCHAR" />
+    <result column="peixunjigou" property="peixunjigou" jdbcType="VARCHAR" />
+    <result column="px_startTime" property="pxStarttime" jdbcType="TIMESTAMP" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="post" property="post" jdbcType="VARCHAR" />
+    <result column="px_endTime" property="pxEndtime" jdbcType="TIMESTAMP" />
+    <result column="peixunneirong" property="peixunneirong" jdbcType="VARCHAR" />
+    <result column="rname" property="rname" jdbcType="VARCHAR" />
+    <result column="ruzhiTime" property="ruzhitime" jdbcType="TIMESTAMP" />
+    <result column="uname" property="uname" jdbcType="VARCHAR" />
+    <result column="university" property="university" jdbcType="VARCHAR" />
+    <result column="upass" property="upass" jdbcType="VARCHAR" />
+    <result column="usex" property="usex" jdbcType="INTEGER" />
+    <result column="xueli" property="xueli" jdbcType="VARCHAR" />
+    <result column="zhuanye" property="zhuanye" jdbcType="VARCHAR" />
+    <result column="role_id" property="roleId" jdbcType="BIGINT" />
+    <result column="marine_id" property="marineId" jdbcType="BIGINT" />
+    <result column="pxDesc" property="pxdesc" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="qq" property="qq" jdbcType="VARCHAR" />
+    <result column="weixin" property="weixin" jdbcType="VARCHAR" />
+    <result column="dept_id" property="deptId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, age, biyetime, dept, emerName, emerPhone, empDesc, empNo, huji, id_card, isDel, 
+    juzhudi, manager, peixunjigou, px_startTime, phone, post, px_endTime, peixunneirong, 
+    rname, ruzhiTime, uname, university, upass, usex, xueli, zhuanye, role_id, marine_id, 
+    pxDesc, state, qq, weixin, dept_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_sys_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_sys_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.model.TUser" >
+    insert into t_sys_user (id, age, biyetime, 
+      dept, emerName, emerPhone, 
+      empDesc, empNo, huji, 
+      id_card, isDel, juzhudi, 
+      manager, peixunjigou, px_startTime, 
+      phone, post, px_endTime, 
+      peixunneirong, rname, ruzhiTime, 
+      uname, university, upass, 
+      usex, xueli, zhuanye, 
+      role_id, marine_id, pxDesc, 
+      state, qq, weixin, 
+      dept_id)
+    values (#{id,jdbcType=BIGINT}, #{age,jdbcType=VARCHAR}, #{biyetime,jdbcType=TIMESTAMP}, 
+      #{dept,jdbcType=VARCHAR}, #{emername,jdbcType=VARCHAR}, #{emerphone,jdbcType=VARCHAR}, 
+      #{empdesc,jdbcType=VARCHAR}, #{empno,jdbcType=VARCHAR}, #{huji,jdbcType=VARCHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{isdel,jdbcType=INTEGER}, #{juzhudi,jdbcType=VARCHAR}, 
+      #{manager,jdbcType=VARCHAR}, #{peixunjigou,jdbcType=VARCHAR}, #{pxStarttime,jdbcType=TIMESTAMP}, 
+      #{phone,jdbcType=VARCHAR}, #{post,jdbcType=VARCHAR}, #{pxEndtime,jdbcType=TIMESTAMP}, 
+      #{peixunneirong,jdbcType=VARCHAR}, #{rname,jdbcType=VARCHAR}, #{ruzhitime,jdbcType=TIMESTAMP}, 
+      #{uname,jdbcType=VARCHAR}, #{university,jdbcType=VARCHAR}, #{upass,jdbcType=VARCHAR}, 
+      #{usex,jdbcType=INTEGER}, #{xueli,jdbcType=VARCHAR}, #{zhuanye,jdbcType=VARCHAR}, 
+      #{roleId,jdbcType=BIGINT}, #{marineId,jdbcType=BIGINT}, #{pxdesc,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{qq,jdbcType=VARCHAR}, #{weixin,jdbcType=VARCHAR}, 
+      #{deptId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.TUser" >
+    insert into t_sys_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="biyetime != null" >
+        biyetime,
+      </if>
+      <if test="dept != null" >
+        dept,
+      </if>
+      <if test="emername != null" >
+        emerName,
+      </if>
+      <if test="emerphone != null" >
+        emerPhone,
+      </if>
+      <if test="empdesc != null" >
+        empDesc,
+      </if>
+      <if test="empno != null" >
+        empNo,
+      </if>
+      <if test="huji != null" >
+        huji,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="isdel != null" >
+        isDel,
+      </if>
+      <if test="juzhudi != null" >
+        juzhudi,
+      </if>
+      <if test="manager != null" >
+        manager,
+      </if>
+      <if test="peixunjigou != null" >
+        peixunjigou,
+      </if>
+      <if test="pxStarttime != null" >
+        px_startTime,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="post != null" >
+        post,
+      </if>
+      <if test="pxEndtime != null" >
+        px_endTime,
+      </if>
+      <if test="peixunneirong != null" >
+        peixunneirong,
+      </if>
+      <if test="rname != null" >
+        rname,
+      </if>
+      <if test="ruzhitime != null" >
+        ruzhiTime,
+      </if>
+      <if test="uname != null" >
+        uname,
+      </if>
+      <if test="university != null" >
+        university,
+      </if>
+      <if test="upass != null" >
+        upass,
+      </if>
+      <if test="usex != null" >
+        usex,
+      </if>
+      <if test="xueli != null" >
+        xueli,
+      </if>
+      <if test="zhuanye != null" >
+        zhuanye,
+      </if>
+      <if test="roleId != null" >
+        role_id,
+      </if>
+      <if test="marineId != null" >
+        marine_id,
+      </if>
+      <if test="pxdesc != null" >
+        pxDesc,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="qq != null" >
+        qq,
+      </if>
+      <if test="weixin != null" >
+        weixin,
+      </if>
+      <if test="deptId != null" >
+        dept_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=VARCHAR},
+      </if>
+      <if test="biyetime != null" >
+        #{biyetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dept != null" >
+        #{dept,jdbcType=VARCHAR},
+      </if>
+      <if test="emername != null" >
+        #{emername,jdbcType=VARCHAR},
+      </if>
+      <if test="emerphone != null" >
+        #{emerphone,jdbcType=VARCHAR},
+      </if>
+      <if test="empdesc != null" >
+        #{empdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="empno != null" >
+        #{empno,jdbcType=VARCHAR},
+      </if>
+      <if test="huji != null" >
+        #{huji,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="isdel != null" >
+        #{isdel,jdbcType=INTEGER},
+      </if>
+      <if test="juzhudi != null" >
+        #{juzhudi,jdbcType=VARCHAR},
+      </if>
+      <if test="manager != null" >
+        #{manager,jdbcType=VARCHAR},
+      </if>
+      <if test="peixunjigou != null" >
+        #{peixunjigou,jdbcType=VARCHAR},
+      </if>
+      <if test="pxStarttime != null" >
+        #{pxStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="post != null" >
+        #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="pxEndtime != null" >
+        #{pxEndtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="peixunneirong != null" >
+        #{peixunneirong,jdbcType=VARCHAR},
+      </if>
+      <if test="rname != null" >
+        #{rname,jdbcType=VARCHAR},
+      </if>
+      <if test="ruzhitime != null" >
+        #{ruzhitime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="uname != null" >
+        #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="university != null" >
+        #{university,jdbcType=VARCHAR},
+      </if>
+      <if test="upass != null" >
+        #{upass,jdbcType=VARCHAR},
+      </if>
+      <if test="usex != null" >
+        #{usex,jdbcType=INTEGER},
+      </if>
+      <if test="xueli != null" >
+        #{xueli,jdbcType=VARCHAR},
+      </if>
+      <if test="zhuanye != null" >
+        #{zhuanye,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="marineId != null" >
+        #{marineId,jdbcType=BIGINT},
+      </if>
+      <if test="pxdesc != null" >
+        #{pxdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null" >
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null" >
+        #{deptId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.model.TUserExample" resultType="java.lang.Integer" >
+    select count(*) from t_sys_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.TUser" >
+    update t_sys_user
+    <set >
+      <if test="age != null" >
+        age = #{age,jdbcType=VARCHAR},
+      </if>
+      <if test="biyetime != null" >
+        biyetime = #{biyetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dept != null" >
+        dept = #{dept,jdbcType=VARCHAR},
+      </if>
+      <if test="emername != null" >
+        emerName = #{emername,jdbcType=VARCHAR},
+      </if>
+      <if test="emerphone != null" >
+        emerPhone = #{emerphone,jdbcType=VARCHAR},
+      </if>
+      <if test="empdesc != null" >
+        empDesc = #{empdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="empno != null" >
+        empNo = #{empno,jdbcType=VARCHAR},
+      </if>
+      <if test="huji != null" >
+        huji = #{huji,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="isdel != null" >
+        isDel = #{isdel,jdbcType=INTEGER},
+      </if>
+      <if test="juzhudi != null" >
+        juzhudi = #{juzhudi,jdbcType=VARCHAR},
+      </if>
+      <if test="manager != null" >
+        manager = #{manager,jdbcType=VARCHAR},
+      </if>
+      <if test="peixunjigou != null" >
+        peixunjigou = #{peixunjigou,jdbcType=VARCHAR},
+      </if>
+      <if test="pxStarttime != null" >
+        px_startTime = #{pxStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="post != null" >
+        post = #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="pxEndtime != null" >
+        px_endTime = #{pxEndtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="peixunneirong != null" >
+        peixunneirong = #{peixunneirong,jdbcType=VARCHAR},
+      </if>
+      <if test="rname != null" >
+        rname = #{rname,jdbcType=VARCHAR},
+      </if>
+      <if test="ruzhitime != null" >
+        ruzhiTime = #{ruzhitime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="uname != null" >
+        uname = #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="university != null" >
+        university = #{university,jdbcType=VARCHAR},
+      </if>
+      <if test="upass != null" >
+        upass = #{upass,jdbcType=VARCHAR},
+      </if>
+      <if test="usex != null" >
+        usex = #{usex,jdbcType=INTEGER},
+      </if>
+      <if test="xueli != null" >
+        xueli = #{xueli,jdbcType=VARCHAR},
+      </if>
+      <if test="zhuanye != null" >
+        zhuanye = #{zhuanye,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="marineId != null" >
+        marine_id = #{marineId,jdbcType=BIGINT},
+      </if>
+      <if test="pxdesc != null" >
+        pxDesc = #{pxdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="qq != null" >
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null" >
+        weixin = #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null" >
+        dept_id = #{deptId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.TUser" >
+    update t_sys_user
+    set age = #{age,jdbcType=VARCHAR},
+      biyetime = #{biyetime,jdbcType=TIMESTAMP},
+      dept = #{dept,jdbcType=VARCHAR},
+      emerName = #{emername,jdbcType=VARCHAR},
+      emerPhone = #{emerphone,jdbcType=VARCHAR},
+      empDesc = #{empdesc,jdbcType=VARCHAR},
+      empNo = #{empno,jdbcType=VARCHAR},
+      huji = #{huji,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      isDel = #{isdel,jdbcType=INTEGER},
+      juzhudi = #{juzhudi,jdbcType=VARCHAR},
+      manager = #{manager,jdbcType=VARCHAR},
+      peixunjigou = #{peixunjigou,jdbcType=VARCHAR},
+      px_startTime = #{pxStarttime,jdbcType=TIMESTAMP},
+      phone = #{phone,jdbcType=VARCHAR},
+      post = #{post,jdbcType=VARCHAR},
+      px_endTime = #{pxEndtime,jdbcType=TIMESTAMP},
+      peixunneirong = #{peixunneirong,jdbcType=VARCHAR},
+      rname = #{rname,jdbcType=VARCHAR},
+      ruzhiTime = #{ruzhitime,jdbcType=TIMESTAMP},
+      uname = #{uname,jdbcType=VARCHAR},
+      university = #{university,jdbcType=VARCHAR},
+      upass = #{upass,jdbcType=VARCHAR},
+      usex = #{usex,jdbcType=INTEGER},
+      xueli = #{xueli,jdbcType=VARCHAR},
+      zhuanye = #{zhuanye,jdbcType=VARCHAR},
+      role_id = #{roleId,jdbcType=BIGINT},
+      marine_id = #{marineId,jdbcType=BIGINT},
+      pxDesc = #{pxdesc,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      qq = #{qq,jdbcType=VARCHAR},
+      weixin = #{weixin,jdbcType=VARCHAR},
+      dept_id = #{deptId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+   <select id="selectByNamePasswd" resultMap="BaseResultMap"
+        parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List" />
+        from t_sys_user
+        where uname = #{uname,jdbcType=VARCHAR} and upass =
+        #{upass,jdbcType=VARCHAR}
+    </select>
+    
+     <select id="getUserList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from t_sys_user
+        where uname  LIKE '%${uname}%' and  isdel = #{isdel,jdbcType=Integer}
+     </select>
+</mapper>

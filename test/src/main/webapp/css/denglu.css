@@ -1,0 +1,88 @@
+/*登陆页面的样式*/
+body{ background:url(../images/denglu_bg.png) repeat;}
+.denglu_main {
+	width:769px;
+	height:491px;
+	background:url(../images/denglu_mainbg.png) no-repeat;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-245px 0 0 -384px;
+
+
+}
+.from_input {
+	position:absolute; 
+	bottom:129px !important;
+	bottom:130px;
+	right:20px;
+	width:165px;
+	
+
+}
+.user_name,.user_password {
+	width:160px;
+	height:25px;
+	line-height:32px;
+	color:#9c9c9c;
+	float:left;
+	display:inline;
+    background:none;
+	border:none;
+	font-size:12px; color:#76a3e0;
+
+}
+.user_name {
+	margin-bottom:32px;
+}
+
+
+.dlfrom_tijiao {
+	background:url(../images/dl_but_input.png) no-repeat;
+	width:140px;
+	height:40px;
+	border:none;
+	position:absolute; 
+	bottom:50px; 
+	right:50px;
+	cursor:pointer;
+}
+.dlfrom_tijiao:hover {
+	background:url(../images/dl_but_input_hover.png) no-repeat;
+	position:absolute; 
+	bottom:50px; 
+	right:50px;
+	cursor:pointer;
+}
+.error{ width:204px; text-align:center;/*visibility:hidden;*/  color:#fff100; padding:5px 0; position:absolute;bottom:95px;right:55px; }
+.shenfen_leibie{
+	position:absolute; 
+	bottom:40px; 
+	right:120px;
+	width:80px;
+	height:50px;
+	}
+.shenfen_leibie span{ display:block; width:80px; float:left; font-size:12px; font-weight:bold; color:#67b3f4; padding:2px 0;}
+.shenfen_leibie span input{ vertical-align:-2px; margin-right:3px;}
+.dl_banquan{
+	position:absolute; 
+	bottom:-15px; /* 把版权信息的位置向下移动10个px （由5px改为-15px）,以放置浏览器版本说明信息。  马恩方  2015年4月7日13:55:26*/
+	right:72px;
+	color:#67b3f4;
+	font-size:12px;
+}
+
+/* 添加支持浏览器版本支持说明信息。并制定显示样式    马恩方 2015年4月7日13:56:10*/
+.browser_version{
+	position:absolute; 
+	bottom:5px; 
+	right:30px;
+	color:#67b3ff;
+	font-size:12px;
+	
+}
+
+
+
+
+

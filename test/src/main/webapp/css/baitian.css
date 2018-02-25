@@ -1,0 +1,268 @@
+/* CSS Document*/
+	body {
+	background:#fff;
+}
+/*按钮*/
+.input_but {
+	background:#5373ff;
+	color:#fff;
+}
+.input_but_1 {
+	background:#5373ff;
+	color:#fff;
+}
+.input_but:hover {
+	background:#1e1e1e;
+}
+.input_but_1:hover {
+	background:#1e1e1e;
+}
+/*top*/
+	.header {
+	width:100%;
+	background:#5373ff;
+}
+.nav {
+	background:#1e1e1e;
+}
+/*警告通知*/
+	.jg_left {
+	background:url(../images/jg_left_b.png) no-repeat;
+	color:#79b400;
+}
+.jg_xinxi a {
+	text-decoration:none;
+	color:#F6FF00;
+}
+/*left*/
+	.left {
+	background:#eff0f4;
+}
+.left h2 {
+	background:#fff;
+	border-bottom:solid 2px #a9b9ff;
+	color:#000;
+}
+.left_neir li {
+	border-bottom:solid 1px #eff0f4;
+	background:#fff;
+}
+.left_neir li span {
+	border-right:solid 1px #eff0f4;
+	background: url("../images/left_span_bg.gif") no-repeat;
+	
+}
+.span_bg {
+	background:url(../images/left_span_bg.gif) no-repeat;
+}
+.left_neir li span.span_xuanzhong {
+	background:url(../images/span_xuanzhong.gif) no-repeat;
+}
+.left_neir li a {
+	color:#000;
+}
+.left_neir li a.a_xuanzhong {
+	background:#5373ff;
+	color:#fff;
+}
+.left_neir li a:hover {
+	background:#434343;
+	color:#fff;
+}
+/*right*/
+	.title {
+	border-bottom:solid 2px #a9b9ff;
+	background:#fff;
+}
+.title span {
+	color:#000;
+}
+.titel_neir {
+	background:#eff0f4;
+}
+.title_left {
+	background:#fff;
+}
+.title_left dt,.title_left dd {
+	color:#000;
+}
+.title_rihgt li a {
+	color:#000;
+}
+.title_rihgt li a.current {
+	background:#fff;
+	color:#5373ff
+}
+.title_tjxx {
+	background:#eff0f4;
+}
+/*footer*/
+	.footer {
+	border-top:solid 2px #a9b9ff;
+	background:#1e1e1e;
+}
+/*应请求信息服务*/
+	.title label {
+	color:#fff;
+	background:url(../images/sousuo_bg.png) no-repeat;
+}
+.height_main {
+	background:#eff0f4;
+}
+.xinxifuwu_neir {
+	background:#eff0f4;
+}
+.xxfw_bd {
+	background:#fff;
+	border:solid 1px #b8b8b8;
+}
+.xxfw_bd_form td {
+	color:#000;
+}
+/*交接班记录浏览*/
+	.jib_sea {
+	background:#fff;
+	border:solid 1px #ccc;
+}
+.jib_bd_sea td {
+	color:#000;
+}
+.jib_bd {
+	background:#fff;
+	border-left:solid 1px #b8b8b8;
+	border-top:solid 1px #b8b8b8;
+}
+.jib_bd_from tr.even {
+	background:#fff;
+}
+.jib_bd_from tr.odd {
+	background:#f5f5f5;
+}
+.jib_bd_from tr.hov_er {
+	background:#fff3bb;
+	cursor:pointer;
+}
+.jib_bd_from tr th {
+	background:#cecece;
+	border-bottom:solid 1px #b8b8b8;
+	border-right:solid 1px #b8b8b8;
+}
+.jib_bd_from tr td {
+	border-bottom:solid 1px #b8b8b8;
+	border-right:solid 1px #b8b8b8;
+}
+
+
+.jib_bd_from2 tr.even {
+	background:#fff;
+}
+.jib_bd_from2 tr.odd {
+	background:#f5f5f5;
+}
+.jib_bd_from2 tr.hov_er {
+	background:#fff3bb;
+	cursor:pointer;
+}
+.jib_bd_from2 tr th {
+	background:#cecece;
+	border-bottom:solid 1px #b8b8b8;
+	border-right:solid 1px #b8b8b8;
+}
+.jib_bd_from2 tr td {
+	border-bottom:solid 1px #b8b8b8;
+	border-right:solid 1px #b8b8b8;
+}
+
+/*纠正处置违法*/
+	.czwf_bd {
+	border:solid 1px #b8b8b8;
+}
+.czwf_title {
+	background:#fff;
+	border-top:3px solid #b8b8b8;
+}
+.dc_talbe {
+	background:url(../images/dc_talbe_b.png) no-repeat;
+}
+.buttom{
+	background:#fff;
+}
+.buttom a.buttom_a{
+	background:#5373ff;
+	color:#fff;
+}
+.buttom a.buttom_a:hover{
+	background:#000;
+}
+.czwf_bianhao {
+	background:#e4e4e4;
+}
+.czwf_bianhao span {
+	color:#6b6b6b;
+}
+.czwf_bd_list {
+	border-left:solid 1px #b8b8b8;
+	background:#fff;
+}
+.czwf_table_list tr th {
+	background:#cecece;
+	border-bottom:solid 1px #b8b8b8;
+	border-right:solid 1px #b8b8b8;
+}
+.czwf_table_list tr td {
+	border-right:solid 1px #b8b8b8;
+	border-bottom:solid 1px #b8b8b8;
+}
+.czwf_textarea {
+	border:solid 1px #b8b8b8;
+	margin:2px 0;
+	color:#000;
+}
+/*添加船位报告记录*/
+	.xinx_jl_left {
+	background: #fff url(../images/bg1.png) no-repeat left bottom;
+}
+.xinx_jl_center {
+	background: #fff url(../images/bg2.png) no-repeat left bottom;
+}
+.xinx_jl_right {
+	background: #fff url(../images/bg3.png) no-repeat left bottom;
+}
+.xinx_jl_left dl,.xinx_jl_center dl,.xinx_jl_right dl {
+	border-bottom:dashed 1px #b8b8b8;
+}
+.xinx_jl_left dt,.xinx_jl_center dt,.xinx_jl_right dt {
+	color:#000;
+}
+.xinx_jl_left dd,.xinx_jl_center dd,.xinx_jl_right dd {
+	color:#aaaaaa;
+}
+
+
+/*登陆*/
+.dl_main {
+	background:url(../images/denglu_kb.png) no-repeat;
+}
+.dl_user,.dl_password {
+	color:#a1b2ff;
+}
+.tishi {
+	color:#fffc01;
+}
+.tj_from {
+	background:url(../images/b_butom.png) no-repeat;
+}
+.tj_from:hover {
+	background:url(../images/b_butom_hover.png) no-repeat;
+}
+
+/* 交接班 数据表格样式 */
+.tl_table{border:1px solid #B8B8B8;}
+.tl_table th{ background:#F5F5F5; border:1px solid #B8B8B8;}
+.tl_table td{ background:#fff;border:1px solid #B8B8B8;}
+
+/*错误页面  */
+.cwym_main{ background:url(../images/cwym_bg_bt.png) no-repeat;}
+.clsA{background:#5373ff;color:#fff;}
+.clsA:hover{background:#1E1E1E;}
+

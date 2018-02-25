@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.TMarineMapper" >
+  <resultMap id="BaseResultMap" type="com.model.TMarine" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="AREA_ID" property="areaId" jdbcType="INTEGER" />
+    <result column="CONTACT" property="contact" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="FAX" property="fax" jdbcType="VARCHAR" />
+    <result column="FIRST_LETTER" property="firstLetter" jdbcType="VARCHAR" />
+    <result column="IS_DEL" property="isDel" jdbcType="INTEGER" />
+    <result column="IS_MODABLE" property="isModable" jdbcType="INTEGER" />
+    <result column="IS_ORGAN" property="isOrgan" jdbcType="INTEGER" />
+    <result column="LEVEL_ID" property="levelId" jdbcType="INTEGER" />
+    <result column="MARINE_CODE" property="marineCode" jdbcType="VARCHAR" />
+    <result column="MARINE_NAME" property="marineName" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="POSTCODE" property="postcode" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="PID" property="pid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, ADDRESS, AREA_ID, CONTACT, CREATE_TIME, FAX, FIRST_LETTER, IS_DEL, IS_MODABLE, 
+    IS_ORGAN, LEVEL_ID, MARINE_CODE, MARINE_NAME, PHONE, POSTCODE, UPDATE_TIME, PID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_marine
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_marine
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.TMarine" >
+    insert into t_marine (ID, ADDRESS, AREA_ID, 
+      CONTACT, CREATE_TIME, FAX, 
+      FIRST_LETTER, IS_DEL, IS_MODABLE, 
+      IS_ORGAN, LEVEL_ID, MARINE_CODE, 
+      MARINE_NAME, PHONE, POSTCODE, 
+      UPDATE_TIME, PID)
+    values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{areaId,jdbcType=INTEGER}, 
+      #{contact,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{fax,jdbcType=VARCHAR}, 
+      #{firstLetter,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, #{isModable,jdbcType=INTEGER}, 
+      #{isOrgan,jdbcType=INTEGER}, #{levelId,jdbcType=INTEGER}, #{marineCode,jdbcType=VARCHAR}, 
+      #{marineName,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{pid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.TMarine" >
+    insert into t_marine
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="areaId != null" >
+        AREA_ID,
+      </if>
+      <if test="contact != null" >
+        CONTACT,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="fax != null" >
+        FAX,
+      </if>
+      <if test="firstLetter != null" >
+        FIRST_LETTER,
+      </if>
+      <if test="isDel != null" >
+        IS_DEL,
+      </if>
+      <if test="isModable != null" >
+        IS_MODABLE,
+      </if>
+      <if test="isOrgan != null" >
+        IS_ORGAN,
+      </if>
+      <if test="levelId != null" >
+        LEVEL_ID,
+      </if>
+      <if test="marineCode != null" >
+        MARINE_CODE,
+      </if>
+      <if test="marineName != null" >
+        MARINE_NAME,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="postcode != null" >
+        POSTCODE,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="pid != null" >
+        PID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null" >
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="contact != null" >
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fax != null" >
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="firstLetter != null" >
+        #{firstLetter,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="isModable != null" >
+        #{isModable,jdbcType=INTEGER},
+      </if>
+      <if test="isOrgan != null" >
+        #{isOrgan,jdbcType=INTEGER},
+      </if>
+      <if test="levelId != null" >
+        #{levelId,jdbcType=INTEGER},
+      </if>
+      <if test="marineCode != null" >
+        #{marineCode,jdbcType=VARCHAR},
+      </if>
+      <if test="marineName != null" >
+        #{marineName,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null" >
+        #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.model.TMarineExample" resultType="java.lang.Integer" >
+    select count(*) from t_marine
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.TMarine" >
+    update t_marine
+    <set >
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null" >
+        AREA_ID = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="contact != null" >
+        CONTACT = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fax != null" >
+        FAX = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="firstLetter != null" >
+        FIRST_LETTER = #{firstLetter,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        IS_DEL = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="isModable != null" >
+        IS_MODABLE = #{isModable,jdbcType=INTEGER},
+      </if>
+      <if test="isOrgan != null" >
+        IS_ORGAN = #{isOrgan,jdbcType=INTEGER},
+      </if>
+      <if test="levelId != null" >
+        LEVEL_ID = #{levelId,jdbcType=INTEGER},
+      </if>
+      <if test="marineCode != null" >
+        MARINE_CODE = #{marineCode,jdbcType=VARCHAR},
+      </if>
+      <if test="marineName != null" >
+        MARINE_NAME = #{marineName,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null" >
+        POSTCODE = #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pid != null" >
+        PID = #{pid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.TMarine" >
+    update t_marine
+    set ADDRESS = #{address,jdbcType=VARCHAR},
+      AREA_ID = #{areaId,jdbcType=INTEGER},
+      CONTACT = #{contact,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      FAX = #{fax,jdbcType=VARCHAR},
+      FIRST_LETTER = #{firstLetter,jdbcType=VARCHAR},
+      IS_DEL = #{isDel,jdbcType=INTEGER},
+      IS_MODABLE = #{isModable,jdbcType=INTEGER},
+      IS_ORGAN = #{isOrgan,jdbcType=INTEGER},
+      LEVEL_ID = #{levelId,jdbcType=INTEGER},
+      MARINE_CODE = #{marineCode,jdbcType=VARCHAR},
+      MARINE_NAME = #{marineName,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      POSTCODE = #{postcode,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      PID = #{pid,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
